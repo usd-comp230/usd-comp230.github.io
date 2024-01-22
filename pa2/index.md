@@ -1,39 +1,32 @@
 ---
 layout: pa
-title: "PA2: Manipulating Lists"
+title: "PSA2: Manipulating Lists"
 doodle: "../doodle.png"
 ---
 
-# PA2: Lists
+# PSA2: Lists
 ---
 
 You should finish reading the whole writeup before you start to code. 
 
 This assignment will exercise your understanding of array and linked lists.
 
-This PA is due on ** **Thursday, July 7th at 11:00pm** **. This assignment is not open to collaboration. __You should be completing it on your own__. Please review the academic integrity guidelines.
+This PSA is due on ** **TODO at 10:00pm** **. This assignment is not open to collaboration.
 
-## CSE Mantra: *Start early, start often!*
-*You will notice throughout the quarter that the PAs get harder and harder. 
-By starting the quarter off with good habits, you can prepare yourself for 
-future PAs that might take more time than the earlier ones.*
+
+_This assignment is adapted from [an assignment from UCSD's
+CSE 12](https://ucsd-cse12-w19.github.io/pa2/)._
 
 ## Getting the Code
+You can access the starter code and accept the assignment here:  
 
-The starter code available on Github at [https://github.com/ucsd-cse12-ss22/PA2_starter_code](https://github.com/ucsd-cse12-ss22/PA2_starter_code). If you are not familiar with Github, here are two easy ways to get your code.
+The starter code available on Github at [https://classroom.github.com/a/jirrR91k](https://classroom.github.com/a/jirrR91k). Click on the link and accept the assignment. If you are not familiar with Github, here is an easy way to get your code.
 
-1. Download as a ZIP folder 
+Using git clone (requires terminal/command line)
 
-    If you scroll to the top of Github repository, you should see a green button that says *Code*. Click on that button. Then click on *Download ZIP*. This should download all the files as a ZIP folder. You can then unzip/extract the zip bundle and move it to wherever you would like to work. The code that you will be changing is in the folder called *pa1-starter*.
+If you scroll to the top of the Github repository, you should see a green button that says *Code*. Click on that button. You should see something that says *Clone with HTTPS*. Copy the link that is in that section. In terminal/command line, navigate to whatever folder/directory you would like to work. Type the command `git clone _` where the `_` is replaced with the link you copied. This should clone the repository on your computer and you can then edit the files on whatever IDE you see fit.
     
-![](https://i.imgur.com/ujaxqBP.png)
-
-
-2. Using git clone (requires terminal/command line)
-
-    If you scroll to the top of the Github repository, you should see a green button that says *Code*. Click on that button. You should see something that says *Clone with HTTPS*. Copy the link that is in that section. In terminal/command line, navigate to whatever folder/directory you would like to work. Type the command `git clone _` where the `_` is replaced with the link you copied. This should clone the repository on your computer and you can then edit the files on whatever IDE you see fit.
-    
-If you are unsure or have questions about how to get the starter code, feel free to make a Piazza post or ask a tutor for help.
+If you are unsure or have questions about how to get the starter code, feel free to make a CampusWire post or ask your instructor for help.
 
 ## Code Layout
 
@@ -223,7 +216,7 @@ or = in `Choosers.java `.  This is because if those are allowed, students can ju
 You will also answer question on Gradescope regarding the assignment. Answer 
 the two questions written below. 
 **Make sure to submit
-directly to the Gradescope assignment: "PA2-written"** 
+directly to the Gradescope assignment: "PSA-lists-written"** 
 
 1. Describe a mistake you made in your implementation, and how you fixed it.
 (Don't worry even if you think you implementation is incomplete when answering 
@@ -236,7 +229,7 @@ of `ArrayGL` or `LinkedGL`? Why? (150 words or less)
 
 After you get the code, you will notice that the class bodies for both
 `ArrayGL` and `LinkedGL` are quite empty. Indeed, trying to compile the program
-by `javac -cp ../lib/junit-4.12.jar:../lib/hamcrest-core-1.3.jar:. *.java `
+by `javac -cp MyList.java ArrayGL.java LinkedGL.java`
 will result in errors like:
 
 ```
@@ -343,12 +336,11 @@ You *are* allowed and encouraged:
 
 You are free to use all of the following resources:
 
-- Code from this PA writeup
+- Code from this PSA writeup
 - Code from lecture
-- Code from discussion
-- Code posted on the course web site and linked resources
-- Code from your past PAs
-- Code that was public on Piazza before the PA was released
+- Code posted on Canvas and linked resources
+- Code from your past PSAs
+- Code that was public on CampusWire before the PSA was released
 - Code or ideas from the official Java documentation
 
 We encourage you to make heavy use of these resources! Much of these are linked
@@ -371,7 +363,7 @@ from the schedule on the course web page.
 13. You can use Arrays class in your tests
 
 ## Asking for Help
-Feel free to ask the staff about anything from lecture. For this PA, you may
+Feel free to ask the instructor about anything from lecture. For this PSA, you may
 find it especially helpful to go over the worksheets and code from the lecture
 on Array Lists and Linked Lists.
 
@@ -406,7 +398,7 @@ Checklist:
 ## Submitting
 
 ### Part 1 & 2
-On the Gradescope assignment **PA2-code** please submit 
+On the Gradescope assignment **PSA-lists-code** please submit 
 the following files:
 
     * ArrayGL.java
@@ -422,7 +414,7 @@ the following files:
 
 ### Part 3
 Please submit your answers to the questions from part 3 on the Gradescope 
-assignment **PA2-written**. You may submit as many 
+assignment **PSA-lists-written**. You may submit as many 
 times as you like till the deadline.
 
 ## Scoring (50 points total)
@@ -439,7 +431,7 @@ times as you like till the deadline.
 
 ## Modern Java: Lambda Expressions
 
-**This section is not required for completing the PA, but is really cool and
+**This section is not required for completing the PSA, but is really cool and
 can help you write more tests more quickly.**
 
 Read this blog post, up to the part about Block Lambda Expressions:
