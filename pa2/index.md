@@ -1,7 +1,7 @@
 ---
 layout: pa
 title: "PSA2: Manipulating Lists"
-doodle: "../doodle.png"
+# doodle: "../doodle.png"
 ---
 
 # PSA2: Lists
