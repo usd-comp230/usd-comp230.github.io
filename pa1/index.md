@@ -98,7 +98,7 @@ that is _unique_ to that implementation. This will truly demonstrate how
 they differ.
 
 ## Getting the Code
-The starter code available on Github at [https://github.com/ucsd-cse12-ss22/PA1_starter_code](https://github.com/ucsd-cse12-ss22/PA1_starter_code). If you are not familiar with Github, here are two easy ways to get your code.
+The starter code available on Github at [https://classroom.github.com/a/BuimRQZz](https://classroom.github.com/a/BuimRQZz). If you are not familiar with Github, here are two easy ways to get your code.
 
 1. Download as a ZIP folder 
 
