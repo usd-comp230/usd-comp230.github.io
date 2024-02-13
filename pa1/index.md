@@ -1,6 +1,6 @@
 ---
 layout: pa
-title: "PA1: Testing Shopping Baskets"
+title: "PSA1: Testing Shopping Baskets"
 # doodle: "../doodle.png"
 ---
 
@@ -10,9 +10,9 @@ title: "PA1: Testing Shopping Baskets"
 This assignment will teach you to use JUnit to test implementations of an
 interface, and review a number of Java concepts.
 
-_This assignment draws from an assignment by Prof Politz at UCSD._
+_This assignment draws from an assignment by Prof Politz's CSE 12 assignment at UCSD._
 
-This PA is due on ** **Thursday, February 22nd at 10:00pm** **
+This PSA is due on ** **Thursday, February 22nd at 10:00pm** **
 
 ## Baskets and Interns
 
