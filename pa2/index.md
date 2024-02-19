@@ -11,7 +11,7 @@ You should finish reading the whole writeup before you start to code.
 
 This assignment will exercise your understanding of array and linked lists.
 
-This PSA is due on ** **TODO at 10:00pm** **. This assignment is not open to collaboration.
+This PSA is due on ** **February 29th at 10:00pm** **. This assignment is not open to collaboration.
 
 
 _This assignment is adapted from [an assignment from UCSD's
@@ -20,11 +20,7 @@ CSE 12](https://ucsd-cse12-w19.github.io/pa2/)._
 ## Getting the Code
 You can access the starter code and accept the assignment here:  
 
-The starter code available on Github at [https://classroom.github.com/a/jirrR91k](https://classroom.github.com/a/jirrR91k). Click on the link and accept the assignment. If you are not familiar with Github, here is an easy way to get your code.
-
-Using git clone (requires terminal/command line)
-
-If you scroll to the top of the Github repository, you should see a green button that says *Code*. Click on that button. You should see something that says *Clone with HTTPS*. Copy the link that is in that section. In terminal/command line, navigate to whatever folder/directory you would like to work. Type the command `git clone _` where the `_` is replaced with the link you copied. This should clone the repository on your computer and you can then edit the files on whatever IDE you see fit.
+The starter code available on Github at [https://classroom.github.com/a/P_qBrNXT](https://classroom.github.com/a/P_qBrNXT). Click on the link and accept the assignment.
     
 If you are unsure or have questions about how to get the starter code, feel free to make a CampusWire post or ask your instructor for help.
 
@@ -200,14 +196,14 @@ class UpperCaseTransformer implements MyTransformer<String> {
 ```
 
 "Choosers" should overwrite `public boolean chooseElement(E e)` of `MyChooser`.
-When you put a "chooser" into `chooseAll(MyChooser mc)`'s paramter, like 
-`agl.chooseAll(new LongWordChooser())`, you can access`chooseElement` method by
+When you put a "chooser" into `chooseAll(MyChooser mc)`'s parameter, like 
+`agl.chooseAll(new LongWordChooser())`, you can access `chooseElement` method by
 `mc.chooseElement(element)`. Similarly, "transformers" should overwrite 
-`E transformElement(E e)`and you can access `transformElement` by 
+`E transformElement(E e)` and you can access `transformElement` by 
 `mt.transformElement(element)`.
 
-**Note**: you should not use `toLowerCase()` in `Transformers.java` and >, <, 
-or = in `Choosers.java `.  This is because if those are allowed, students can just copy the code from LongWordChooser and UpperCaseTransformer and change < into == or > and toUpperCase into toLowerCase, which does not count as "create your own choosers and transformers." Therefore, if you want to use <, ==, > or toLowerCase, make sure you are not just taking a shortcut. 
+**Note**: you should not use `toLowerCase()` in `Transformers.java` and `>`, `<`, 
+or `==` in `Choosers.java `.  This is because if those are allowed, students can just copy the code from LongWordChooser and UpperCaseTransformer and change `<` into `==` or `>` and toUpperCase into toLowerCase, which does not count as "create your own choosers and transformers." Therefore, if you want to use `<`, `==`, `>` or `toLowerCase`, make sure you are not just taking a shortcut. 
 
 
 
@@ -216,7 +212,7 @@ or = in `Choosers.java `.  This is because if those are allowed, students can ju
 You will also answer question on Gradescope regarding the assignment. Answer 
 the two questions written below. 
 **Make sure to submit
-directly to the Gradescope assignment: "PSA-lists-written"** 
+directly to the Gradescope assignment: "psa-02-written"** 
 
 1. Describe a mistake you made in your implementation, and how you fixed it.
 (Don't worry even if you think you implementation is incomplete when answering 
@@ -257,16 +253,16 @@ This clearly returns the wrong value, but it will allow you to compile the files
 After doing this, you can start working on the individual methods. You may
 want to start with implementing the methods for `ArrayGL`, since the constructor is already provided. 
 
-Run the tests as you go. Even if you hanve't finished implementing other methods, as long as the files compiles, you can test for the method you're currently working on. 
+Run the tests as you go. Even if you have'nt finished implementing other methods, as long as the files compiles, you can test for the method you're currently working on. 
 
-As you get more comfortable with the PA, move back and
+As you get more comfortable with the PSA, move back and
 forth between the implementations as you see fit to make progress.
 
 
 ## Testing
 
 The thoroughness and correctness of your tests will be graded automatically. 
-Correctnes will be assessed by running your tests against our reference 
+Correctness will be assessed by running your tests against our reference 
 implementation and checking if the results are as expected.
 Thoroughness will be assessed by running your
 tests against each buggy implementation and checking if the results are
@@ -296,19 +292,19 @@ guide to help you implement your own.
 | Test Cases   | Description | Points |
 |--------------|-------------|--------|
 |________________________________________________________|||
-| chaff implementations |The following are examples of bad implementations where your tests will be expected to catch the bugs, look at the names to help get an idea of what the bug could be. For tricker bugs, further explanations are given. <br /> <br />- chaffAlwaysChoosesFirstArrayGL: in ArrayGL, chooseAll() always chooses the first element<br /><br /> - chaffIsEmptyReturnsTrueIfSizeGreaterThan0ArrayGL<br /><br />- chaffReturnNewArrayArrayGL: in ArrayGL, toArray() does not create a new array<br /><br />- chaffIsEmptyReturnsFalseSizeGreaterThan3<br /><br />- chaffChooseAllFailsIfLastNotChosenLinkedGL: in LinkedGL, chooseAll() will cause an exception if the last node is not chosen<br /><br />- chaffDoWhileToArrayLinkedGL: in LinkedGL, a do-while loop is used in toArray()<br /><br />- chaffDoWhileTransformArrayGL<br /><br />- chaffFixedSizeConstructorLinkedGL<br /><br />- chaffIncorrectTransformBoundsLinkedGL: in LinkedGL, transformAll() does not loop through the entire list<br /><br />- chaffIncludeNullToArrayArrayGL: in ArrayGL, extra nulls are being copied to the end of the new array | 10 |
+| chaff implementations |The following are examples of bad implementations where your tests will be expected to catch the bugs, look at the names to help get an idea of what the bug could be. For tricker bugs, further explanations are given. <br /> <br />- `chaffAlwaysChoosesFirstArrayGL`: in `ArrayGL`, `chooseAll()` always chooses the first element<br /><br /> - `chaffIsEmptyReturnsTrueIfSizeGreaterThan0ArrayGL`<br /><br />- `chaffReturnNewArrayArrayGL`: in `ArrayGL`, `toArray()` does not create a new array<br /><br />- `chaffIsEmptyReturnsFalseSizeGreaterThan3`<br /><br />- `chaffChooseAllFailsIfLastNotChosenLinkedGL`: in `LinkedGL`, `chooseAll()` will cause an exception if the last node is not chosen<br /><br />- `chaffDoWhileToArrayLinkedGL`: in `LinkedGL`, a do-while loop is used in `toArray()`<br /><br />- `chaffDoWhileTransformArrayGL`<br /><br />- `chaffFixedSizeConstructorLinkedGL`<br /><br />- `chaffIncorrectTransformBoundsLinkedGL`: in `LinkedGL`, `transformAll()` does not loop through the entire list<br /><br />- `chaffIncludeNullToArrayArrayGL`: in `ArrayGL`, extra nulls are being copied to the end of the new array | 10 |
 |________________________________________________________|||
 | wheat implementation | `TestLists.java` will be used against a correct implementation. This will check if the tests written are correct and do not flag any errors for the wheat implementation. | 5 |
 |________________________________________________________|||
 | Constructor | Correctly populates the instance variables for the object. <br /><br /> - pass an empty array<br />- pass an array with multiple values| 3 |
 |________________________________________________________|||
-| isEmpty |  Correctly checks to see if the ArrayGL/LinkedGL is empty. <br /><br />- the list is empty, returns True<br />- the list is not empty with multiple values, returns False<br />- the list is not empty with only one value, returns False| 6 (3 for ArrayGL, 3 for LinkedGL)|
+| `isEmpty` |  Correctly checks to see if the `ArrayGL`/`LinkedGL` is empty. <br /><br />- the list is empty, returns `true`<br />- the list is not empty with multiple values, returns `false`<br />- the list is not empty with only one value, returns `false`| 6 (3 for `ArrayGL`, 3 for `LinkedGL`)|
 |________________________________________________________|||
-| toArray |  Correctly returns an array of the values that were in the ArrayGL/LinkedGL. <br /><br /> - the list is empty<br />- the list has a large size<br />- creates a new array to return | 6 (3 for ArrayGL, 3 for LinkedGL)|
+| `toArray` |  Correctly returns an array of the values that were in the `ArrayGL`/`LinkedGL`. <br /><br /> - the list is empty<br />- the list has a large size<br />- creates a new array to return | 6 (3 for `ArrayGL`, 3 for `LinkedGL`)|
 |________________________________________________________|||
-| choose | Correctly chooses the desired elements.<br /><br />- the list is empty<br />- choose all of the elements in the list<br />- list with only two elements, choose second element<br />- choose first and last in list | 6 (3 for ArrayGL, 3 for LinkedGL)|
+| `choose` | Correctly chooses the desired elements.<br /><br />- the list is empty<br />- choose all of the elements in the list<br />- list with only two elements, choose second element<br />- choose first and last in list | 6 (3 for `ArrayGL`, 3 for `LinkedGL`)|
 |________________________________________________________|||
-| transform | Correctly transforms the elements in the list. <br /><br />- the list is empty<br />- the list has two items<br />- the list has a large size| 6 (3 for ArrayGL, 3 for LinkedGL)|
+| `transform` | Correctly transforms the elements in the list. <br /><br />- the list is empty<br />- the list has two items<br />- the list has a large size| 6 (3 for `ArrayGL`, 3 for `LinkedGL`)|
 |________________________________________________________|||
 
 ### Sanity Check
@@ -344,7 +340,7 @@ You are free to use all of the following resources:
 - Code or ideas from the official Java documentation
 
 We encourage you to make heavy use of these resources! Much of these are linked
-from the schedule on the course web page.
+from the schedule on the Canvas.
 
 ## Answers for FAQ
 
@@ -363,9 +359,7 @@ from the schedule on the course web page.
 13. You can use Arrays class in your tests
 
 ## Asking for Help
-Feel free to ask the instructor about anything from lecture. For this PSA, you may
-find it especially helpful to go over the worksheets and code from the lecture
-on Array Lists and Linked Lists.
+Feel free to ask the instructor about anything from lecture. For this PSA, you may find it especially helpful to go over the worksheets and code from the lecture on Array Lists and Linked Lists.
 
 If you have any policy questions, please ask!
 
@@ -375,7 +369,6 @@ On this assignment, we will give you feedback on style but not deduct points
 for problems with style. In future assignments, we will deduct style points if 
 you have:
 
-- Lines in code files that are longer than 100 characters
 - Inconsistent indentations
 - Unit tests with generic names like "test1"
 - Helper methods with generic names like "method1"
@@ -398,7 +391,7 @@ Checklist:
 ## Submitting
 
 ### Part 1 & 2
-On the Gradescope assignment **PSA-lists-code** please submit 
+On the Gradescope assignment **psa-02-code** please submit 
 the following files:
 
     * ArrayGL.java
@@ -414,7 +407,7 @@ the following files:
 
 ### Part 3
 Please submit your answers to the questions from part 3 on the Gradescope 
-assignment **PSA-lists-written**. You may submit as many 
+assignment **psa-02-written**. You may submit as many 
 times as you like till the deadline.
 
 ## Scoring (50 points total)
