@@ -28,3 +28,5 @@ _This course draws on ideas and material from Dr. Jiang's version of COMP 230, D
 ## Problem Solving Assignments
 - <a href="https://usd-comp230.github.io/pa1/" target="_blank">PSA 1</a>
 - <a href="https://usd-comp230.github.io/pa2/" target="_blank">PSA 2</a>
+
+- <a href="https://usd-comp230.github.io/pa3/" target="_blank">PSA 3</a>

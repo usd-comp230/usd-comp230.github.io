@@ -1,80 +1,31 @@
 ---
 layout: pa
-title: "PA4: Runtime and Sorting"
-doodle: "../doodle.png"
+title: "PSA3: Runtime, Measured and Modeled (open)"
+#doodle: "../doodle.png"
+---
+# PSA3: Runtime, Measured and Modeled
 ---
 
-This assignment will have two major parts. Part 1 will focus on Runtime and Part 2 will focus on sorting. This assignment will:
-
-1) Give you experience working with big-Ο/θ/Ω
+This assignment will give you experience working with big-Ο/θ/Ω
 representations, practice matching them to implementations, and perform
 measurements of the runtime of different methods.
 
-2) Teach you how to write tests in a thorough, automated way,
-will explore some properties of quicksort.
-
-
 _This assignment is inspired by a combination of a lab in Swarthmore College's
-CS35, and by a similar assignment by Marina Langlois in CSE12 at UCSD and [an assignment from Brown University's
-CS019](https://cs.brown.edu/courses/cs019/2016/sortaclesortacle.html)._
+CS35, and by a similar assignment by Marina Langlois and Joe Politz in CSE12 at UCSD_
 
-
-
-Read the whole writeup before starting – there are several different pieces of
-the assignment you will need to hand in. In particular, you will submit:
-
-- Part 1: `pa4-written` assignment - rather than submitting a pdf, you will fill out your anwers. Your answers will save if you click save, even if you close the window. It will say submitted if you reopen it but you can resubmit as you add in more answers.
-- Part 2: Code to `pa4-code` assignment (starter code: [https://github.com/ucsd-cse12-ss22/PA4_starter_code](https://github.com/ucsd-cse12-ss22/PA4_starter_code))
-
-# PA4 (and ONLY PA4) is Open to collaboration
-
-What does this mean? In your professional programming life, some of your work will be highly collaborative with lots of expert advice available from senior developers and from sites like StackOverflow. This is a common case in companies, in academia, and on open-source projects. It’s a great way to get exposed to new techniques, share knowledge, and generally enjoy teamwork. In contrast, some of your work will involve figuring out programming problems on your own, where you are the first person to encounter an issue, or the first person to try using a new library in the context of your application. You should get experience in both types of situations; we might call the former kind of problem open to collaboration and the latter closed to collaboration.
-
-In terms of courses, this split also makes sense. Programming assignments serve (at least) two roles. First and foremost, they are a mechanism for you to learn! By directly applying the techniques and skills we discuss in class, you get practice and become a better programmer. Second, they are an assessment mechanism – as instructional staff we use them to evaluate your understanding of concepts as demonstrated by your programs. Open collaboration can reduce frustration while learning and give you chances to enjoy collaboration and lots of help, but may not let us accurately evaluate your understanding. Closed assignments are an opportunity for you to demonstrate what you know by way of programming.
-
-This assignment is open, for which you can talk to anyone else in the course, post snippets of code on Piazza, get lots of help from TAs, and generally come up with solutions collaboratively. TAs will be happy to look at your code and suggest approaches and fixes.
-
-There are a few restrictions:
-
-- Any code that you didn’t write must be cited in your `pa4-written` submission
-
-  - __Example:__ You and another student chat online about the solution, you figure out a particular helper method together. You should say “The FOO function was developed in collaboration with Firstname Lastname”
-
-  - __Example:__ On an open assignment, a student posts the recursive method calls they used to solve a problem you were struggling with. You should say “I used the code from https://piazza.com/class/id-of-post”.
-
-- Anyone you work with in-person must be noted in your `pa4-written` submission
-
-  - __Example:__ You and another student sit next to each other in the lab, and point out mistakes and errors to one another as you work through the assignment. As a result, your solutions are substantially similar. You should say “I collaborated with Firstname Lastname to develop my solution.”
-
-- You cannot share an entire repository of code or paste an entire solution into Piazza. Keep snippets to reasonable, descriptive chunks of code; think a dozen lines or so to get the point across.
-- You still cannot use code that you find online (no copying code from StackOverflow or blogs online), or get assistance or code from students outside of this offering of the class. All the code that is handed in should be developed by you or someone in the class.
-- You are responsible for understanding all the code you have written. All of the programming problems on the PAs may show up on exams, where you will need to have a thorough understanding of the PA to answer the questions.
-This doesn’t mean the staff will be handing out answers. We’ll mostly respond with leading questions and advice, and you shouldn’t expect a direct answer to questions like “am I done?” or “is my code right?”
-
-There is no guarantee the assistance you get from your classmates is correct. It is your responsibility to use your judgment to avoid using an idea on Piazza that is wrong, or doesn’t work with your solution; we won’t necessarily tell you one way or another while the assignment is out.
-
-If we see that you used code from other students and didn’t cite it in your `pa4-written` submission, the penalty will range from a point deduction to an academic integrity violation, depending on the severity. Always cite your work!
-
-# Part 1: Runtime
-
-## Big-O Justification
+## Part 1: Big-O Justification
 
 Indicate whether the following assertions are true or false, and give a
-justification:
+justification (provide this in `psa-03-written`):
 
 - _n + 5n<sup>2</sup> + 8n<sup>4</sup>_ is _O(n)_
 - _n! + n<sup>2</sup>_ is _O(n * log n)_
 - _log n + n * log n + log(log n)_ is _Ω(n)_
 - _n<sup>2</sup> + n/4 + 6_ is _Θ(n<sup>3</sup>)_
 - _1/(n<sup>50</sup>) + log32_ is _Θ(1)_
-- _1/(n<sup>50</sup>) + log32_ is _O(1)_
 
 If you are justifying the positive direction, give choices of `n0` and `C`. For
 big-Θ, make sure to justify both big-O and big-Ω, or big-O in both directions.
-
-[These slides](https://drive.google.com/file/d/1TTuUKoJ2I9m6aZztt7ThUgDPKJdH9IqH/view?usp=sharing) give a definition of big-Θ and big-Ω, which were not
-covered in detail in class. The strategies we showed in class for big-O can
-also be used for big-Ω, and big-Θ simply combines the two.
 
 If you are justifying the negative direction, indicate which term(s) can't work
 because one is guaranteed to grow faster or slower than the other.
@@ -97,348 +48,241 @@ might find helpful:
 - f(n) = n!
 - f(n) = n<sup>n</sup>
 
-Provide this in your `pa4-written` submission.
+Provide this written up in `psa-03-written`.
 
-## Stack and Queue Analysis
+## Part 2: Mystery Functions
 
-Consider the four files [QueueStringAL.java](./pa4-written/QueueStringAL.java),
-[StackStringAL.java](./pa4-written/StackStringAL.java), [ArrayStringList.java](./pa4-written/ArrayStringList.java) and [LinkedStringList.java](./pa4-written/LinkedStringList.java). You can veiw all of the files here: [pa4-written](https://github.com/ucsd-cse12-ss22/ucsd-cse12-ss22.github.io/tree/main/pa4/pa4-written)
-
-Answer the following questions, and justify them with one or two sentences
-each:
-
-__QueueStringAL__
-1. Give a tight big-O bound for the _best case_ running time of `enqueue` for QueueStringAL
-2. Give a tight big-O bound for the _best case_ running time of `dequeue` for QueueStringAL
-3. Give a tight big-O bound for the _worst case_ running time of `enqueue` for QueueStringAL
-4. Give a tight big-O bound for the _worst case_ running time of `dequeue` for QueueStringAL
-
-5. Could we improve the running time of `enqueue` and `dequeue` if we change which side of our ArrayStringList represents the front and back of our queue? In your explanation be clear on why or why not and if there is a difference, answer questions 1-4 again but for our new implementation.
-
-6. Imagine we decide to create a QueueStringLL where we implement our QueueStringLL using our LinkedStringList class instead of our ArrayStringList class. In this case assume we  are considering the front of the LinkedStringList the front of our queueue and the back of the LinkedStringList as the back of our queue. Answer questions 1-4 again but for our QueueStringLL.
-
-__StackStringAL__
-1. Give a tight big-O bound for the _best case_ running time of `pop` for StackStringAL
-2. Give a tight big-O bound for the _best case_ running time of `push` for StackStringAL
-3. Give a tight big-O bound for the _worst case_ running time of `pop` for StackStringAL
-4. Give a tight big-O bound for the _worst case_ running time of `push` for StackStringAL
-
-5. Could we improve the running time of `push` and `pop` if we change which side of our ArrayStringList represents the top of our stack? In your explanation be clear on why or why not and if there is a difference, answer questions 1-4 again but for our new implementation.
-
-6. Imagine we decide to create a StackStringLL where we implement our StackStringLL using our LinkedStringList class instead of our ArrayStringList class. In this case assume we  are considering the front of the LinkedStringList our top. Answer questions 1-4 again but for our StackStringLL.
-
-In all cases, give answers in terms of the _current size of the stack or queue_, and
-assume that the stack/queue has some non-empty size _n_. That is, you shouldn't
-consider the empty stack/queue as a best case; instead think about the best case based
-on other factors like size, capacity, and nodes.
-
-Notable points to consider:
-
-- Copying elements into an array takes time proportional to the length of the array
-- When considering the running time of a method, make sure to take into
-  account any helpers methods it uses!
-
-Example for `get` in the `LinkedStringList` class (your analysis will be on Stacks and Queues):
-
-    The get method is O(1) in the best case, when the index is 0. In this case
-    it will do constant work checking the index and immediately return the
-    first element, never entering the while loop.
-
-    The get method is O(n) in the worst case, because the index could be at
-    the end of the list (for example, index n - 1). In this case, the while
-    loop will run n times, spending constant time on each iteration, resulting
-    in overall O(n) number of steps taken.
-
-Provide this written up in your `pa4-written` submission.
-
-# Part 2: Sorting - Testing Partition: A Bad (and Good) Implementation Detector
-
-### Testing with Properties
-
-So far in this class, we have usually written tests by following this process:
-
-1. Construct the input data
-2. Perform an operation
-3. Check that the resulting data is equal to some expected value
-
-This works well for writing a small or medium number of tests targeted at
-particularly interesting cases. Checking specific output values, however, isn't
-the only or necessarily the best way to test and gain confidence in an
-implementation. In fact, sometimes it won't work at all.
-
-Consider the `partition` helper method of quick sort as an interface (here
-we'll restrict it to just partitioning arrays of `String`s):
+We have provided you with a `.jar` file that contains implementations of the
+following methods:
 
 ```
-interface Partitioner {
-  // Change strs between start (inclusive) and end (exclusive), such that
-  // all values at indices lower than a pivot index are smaller than or equal
-  // to the value at the pivot, and all values at indices higher than the pivot
-  // are larger than or equal to the value at the pivot
-
-  int partition(String[] strs, int start, int end);
-}
+	public static void f1(int n) {
+		int a = 0;
+		for (int i = 0; i < n; i += 1) {
+			a = i;
+		}
+	}
+	public static void f2(int n) {
+		int a = 0;
+		for(int i = 0; i < n; i += 2) {
+			a = i;
+		}
+	}
+	public static void f3(int n) {
+		int a = 0;
+		for(int i = 0; i < n * n; i += 1) {
+			a = i;
+		}
+	}
+	public static void f4(int n) {
+		int a = 0;
+		for(int i = 0; i < n; i += 1) {
+			for(int j = i; j < n; j += 1) {
+				a = i + j;
+			}
+		}
+	}
+	public static void f5(int n) {
+		int a = 0;
+		for(int i = 0; i < n * n; i += 1) {
+			for(int j = 0; j <= i / 2; j += 1) {
+				a = i + j;
+			}
+		}
+	}
+	public static void f6(int n) {
+		int k = 1, a = 0;
+		for(int i = 0; i < n; i += 1) {
+			for(int j = 0; j <= k * 2; j += 1) {
+				a = i + j;
+			}
+			k = k * 2;
+		}
+	}
 ```
 
-In lecture and discussion, we noted that there are many ways to implement
-`partition`, in particular the choice of the _pivot index_ is important. Not
-only could we choose different pivots, but one choice is to have a _random_
-choice of pivot!  Let's imagine writing a test for a `Partitioner`:
+However, in that file, they are called `mysteryA-F`, and they are in a
+different order, and we don't provide the source of that file. You have two
+tasks: determining a big-Θ bound for each method labeled 1-6 analyzing
+the source above, and determining which mystery method A-F corresponds to the
+implementations above by measuring against provided (but hidden)
+implementation.
+
+### 2.1 Identifying Bounds from Code
+
+Determine a big-Θ bound for each function, and justify it with a few
+sentences. Give only the most relevant term, so use, for example _Θ(n)_, not
+_Θ(4n + 2)_ Provide this in `psa-03-written`.
+
+### 2.2 Measuring Implementations
+
+You will write a program to:
+
+- Measure the mystery methods
+- Use your measurements to match the mystery methods to the sources above
+- Generate several graphs to justify your work
+
+You have a lot of freedom in how you do this; the deliverables you need to
+produce are specified at the end of this section. There are a few methods that
+we _require_ that you write in order to do this, and they will help guide you
+through the measurement process.
+
+#### The `measure` Method
+
+You _must_ write the following two methods in the `Measure` class:
 
 ```
-class PartitionerFromLecture implements Partitioner {
-  public int partition(String[] strs, int low, int high) {
-    int pivotStartIndex = Random.nextInt(high - low);
-    ... implementation from lecture ...
-  }
-}
-
-
-@Test
-public void testPartitionerFromLecture() {
-  Partitioner p = new PartitionerFromLecture();
-  String[] input = {"z", "b", "a", "f"};
-  int pivot = p.partition(input, 0, 4);
-
-  assertArrayEquals(???, input); // What to expect?
-  assertEquals(???, pivot);
-}
+public static List<Measurement> measure(String[] toRun, int startN, int stopN)`
+public static String measurementsToCSV(List<Measurement> measurements)
 ```
 
-For two items, there are some clever solutions. You can use [special
-matchers](https://stackoverflow.com/a/19064484/2718315),
-for instance.
+where `Measurement` is defined in `Measurement.java`.
 
-Instead of writing out all the tests by hand, we should step back from the
-problem. We really care that the array is _correctly partitioned_ – there
-shouldn't be elements larger than the pivot value at earlier indices, or
-elements smaller than the pivot value at later indices. There are other
-properties, too, like all the elements that were in the input list should
-appear the same number of times in the output list – if `partition` duplicates
-or loses elements, it isn't doing its job!
+- `measure` should work as follows:
 
-So, instead of writing single tests, we should write methods that, given a
-partition algorithm, check if it satisfies some desired _properties_ that
-partitioning ought to. Properties sufficient to show a valid partitioning are:
-
-- All the elements in the original array are present in the array _after_ we
-  call partition
-- No values at indices other than those from `low` (inclusive) to `high`
-  (exclusive) changed their values
-- The elements from `low` to `high` are correctly partitioned:
-  - `partition` returns some _pivot index_ between `low` (inclusive) and `high`
-    (exclusive)
-  - At all indices from `low` up to the pivot index the string is smaller
-    than or equal to (according to `compareTo`) the value at the pivot index
-  - At all indices from the pivot index up to `high - 1`, the string is larger
-    than or equal to (according to `compareTo`) the value at the pivot index
-
-### Your Task
-
-You will turn the properties above into code that checks if a given result from
-partition is valid.  That means your program will decide, for any call to
-`partition`, if it behaves as we'd expect. Further, we can extend this idea to
-build a method that takes a `Partitioner` and returns `null` if we believe it
-to be a good partitioner, and a `CounterExample` if we can find an input array
-and low/high bounds that partition incorrectly:
-
-```
-CounterExample findCounterExample(Partitioner p);
-```
-
-`CounterExample` is defined to contain:
-
-- The _input_ to a call to partition (an array, a low index, and a high index)
-- The _result_ of a call to partition (an array and a returned pivot index)
-- A `reason`, as a `String`, that you choose in order to describe why it is
-  invalid. Some suggestions are below.
-
-You will write a version of `CounterExample` and use it to check multiple
-different partition implementations, some good and some bad. Note that, even
-beyond the argument above about randomness, there are _multiple possible
-correct implementations of partition_.
-
-You must implement two methods to help you; you can implement other helpers as
-you see fit. The two methods you must implement are:
-
-```
-/*
- * Return null if the pivot and after array reflect a correct partitioning of 
- * the before array between low and high.
- *
- * Return a non-null String (your choice) describing why it isn't a valid
- * partition if it is not a valid result. You might choose Strings like these,
- * though there may be more you want to report:
- *
- * - "after array doesn't have same elements as before"
- * - "Item before pivot too large"
- * - "Item after pivot too small"
- */
-String isValidPartitionResult(String[] before, int low, int high, int pivot, String[] after)
-```
-
-```
-/*
- * Generate a list that contains n items (size = n)
- */
-String[] generateInput(int n);
-```
-
-This method should create a list of items to use as input to purported
-partition algorithms. It's up to you how it generates the items; it should
-produce an array of length `n`, however.
-
-### An Overall Strategy
-
-Here's one way you might approach this problem:
-
-- First, implement and test `isValidPartitionResult`. Think of several
-  interesting individual cases (specific arrays and low/high bounds) you can
-  imagine in a first pass, and test it on those cases.  Note that to test
-  `isValidPartitionResult`, you will be creating pairs of arrays of strings for
-  input and expected output (at first, by hand), and checking _both_ for
-  success and for failure: you should have some tests where the `after`
-  parameter and `pivot` describe an incorrect partitioning, and some correct.
-- Implement `generateInput` in a simple way – make `n` Strings of random single
-  characters. Test that the method returns the right number of elements without
-  any errors.
-- Implement a (really) incorrect version of `Partitioner`, that makes no
-  changes at all to the underlying array in its `partition` method. Implement
-  a _good_ version of `Partitioner` as well (you can take the one from
-  class/discussion), adapted to work as a `Partitioner`.
-- Try putting together a first version of `findCounterExample`. It could create
-  a single list using `generateInput`, partition it with the given partitioner,
-  check if it was sorted correctly using `isValidPartitionResult`, and return
-  `null` if it partitioned correctly or a `CounterExampel` if it didn't. Note:
-  you will need to _save_ the original array, since sorters can and will make
-  changes to them! You can use `Arrays.copyOf` to make a copy of an array:
+  1. It assumes each string in `toRun` is one of the letters A-F.
   
-  ```
-  String[] input1 = {"a", "b", "c", "a"};
-  String[] original1 = Arrays.copyOf(input1, input1.length);
-  ```
-    
-  With this flow, you can test that `findCounterExample` returns `null` when
-  passed the good partitioner, and a `CounterExample` when given the bad
-  partitioner. The testing methods `assertNull` and `assertNotNull` can be
-  helpful here.
+  2. For each of the implementations to run, it runs the corresponding
+  `mysteryX` method `stopN - startN` times, providing a value of `n` starting
+  at `startN` and ending at `stopN` each time.
 
-You can write these tests in `TestPartitionOracle.java` (yes, the tester has
-its own tests!). This will get you through the beginning of the problem, and
-familiar with all the major interfaces. With this in hand, you can proceed with
-more refined tests. Here are some ideas:
+  3. For each of these runs, it _measures_ the time it takes to run. You can do
+  this by using the method `System.nanoTime()`. If you don't know how to use this, look it up!
+  
+  4. For each of the measured runs, it creates a `Measurement` whose `valueOfN`
+  field is the value that was used for the given run, whose `name` field is the
+  single-letter string of the implementation that ran, and whose
+  `nanosecondsToRun` field is a measurement, and adds it to a running list of
+  measurements.
 
-- Make a copy of the good `Partitioner` you wrote, and change it in a subtle
-  way, maybe change a < to a <= in comparison or vice versa. Is it still a good
-  partitioner? Can your `findCounterExample` check that?
-- Make a copy of the good `Partitioner` you wrote and change it in an obviously
-  breaking way, maybe by setting an element to the wrong value. Does
-  `findCounterExample` correctly return some `CounterExample` for this
-  implementation?
-- Change `findCounterExample` to call `generateInput` many times, and check that
-  _all_ the generated lists sort correctly, returning the first failure as a
-  `CounterExample` if it didn't.
-- Feel free to add some interesting hand-written cases to `findCounterExample`
-  where you use interesting input lists that you construct by hand. You can
-  combine whether they sort correctly or not (e.g. partition them and then check
-  `isValidPartitionResult`).
-- The `java.util.Random` class has useful tools for generating random numbers
-  and strings.  You can create a random number generator and use it to get
-  random integers from 0 to a bound, which you can combine with ASCII codes to
-  get readable random strings:
+  5. The final result is the list of measurements.
 
-  ```
-  Random r = new Random();
-  int asciiForACapLetter = r.nextInt(26) + 65;  // Generates a random letter from A - Z
-  String s = Character.toString((char)(asciiForACapLetter));
-  ```
-- You may find it useful to copy the arrays into lists so you can remove
-  elements and use other list operations in your oracle. This is a useful
-  one-line way to copy an array into an ArrayList:
+**Example**:
 
-  ```
-  List<String> afterAsList = new ArrayList<>(Arrays.asList(after));
-  ```
+This call:
 
-Overall, your goal is to make it so `findCounterExample` will return `null` for
-any reasonable good partition implementation, and find a `CounterExample` for
-any bad partition implementation with extremely high probability. We will
-provide you with a bunch of them to test against while the assignment is out,
-and we may test on more than we provide you in the initial autograder.
+```
+		measure(new String[]{"A", "B"}, 40, 100);
+```
 
-We won't test on truly crazy situations, like a partitioner that only fails
-when passed lists of 322 elements, or when a one of the strings in the array is
-`"Henry"`. The bad implementations will involve things logically related to
-sorting and manipulating lists, like boundary cases, duplicates, ordering,
-length, base cases, and comparisons, as a few examples.
+Should produce a list that has 122 measurements, 61 of which will have `name`
+equal to `"A"` and 61 of which will have `name` equal to `"B"`. Each of the 61
+for each name will have a different `valueOfN` from 40 to 100, and each will
+have a different number of nanoseconds (as was measured).
 
-**Assume** that there are no `null` items in the arrays, that sorts won't put
-`null` items in the arrays, and that the variables holding lists of items won't
-contain `null`. There are plenty of interesting behavior to consider without
-it!
+### The `measurementsToCSV` method
 
-**Don't** have your implementation of `findCounterExample` take more than a few
-seconds per sorting implementation. You don't need to create million element
-lists to find the issues, and it will just slow down grading. You should focus
-on generating (many, maybe hundreds or thousands of) small interesting lists
-rather than a few big ones, which should process very quickly.
+The `measurementsToCSV` method takes a list of measurements (for example, as
+returned from `measure`) and generates a comma-separated-values `String` of the
+measurements. It should have the following format, where the first row is a
+literal header row and the other rows are example data. Note that this data is
+completely made up, and may not match your measurements.
 
-## File Summary
+You might choose to put all of the measurements for a single letter together:
 
-Starter code is here:  [https://github.com/ucsd-cse12-ss22/PA4_starter_code](https://github.com/ucsd-cse12-ss22/PA4_starter_code)
+```
+name,n,nanoseconds
+A,40,1034
+A,41,1039
+A,42,2033
+... many rows for A ...
+A,100,432
+B,40,1034
+B,41,4038
+... many rows for B ...
+```
 
-- `PartitionOracle.java`:
-  - `findCounterExample` (you implement this)
-  - `generateInput` (you implement this)
-  - `isValidPartitionResult` (you implement this)
-- `TestPartitionOracle.java`: You will write your tests of the methods above here
-- `CounterExample.java` (do not edit this)
-- `Partitioner.java` (do not edit this): Defines the signature of the
-  `partition` method implemented by all sorters. You will implement this
-  interface several times to test `findCounterExample`.
+You might also choose to put all of the measurements for a single round of `n`
+together:
 
-## Style
+```
+name,n,nanoseconds
+A,40,1034
+B,40,1034
+A,41,1039
+B,41,4038
+A,42,2033
+B,42,4038
+... many alternating rows of A, B ...
+A,100,432
+B,100,8038
+```
 
-The style guidelines are the same as PA3, with the following additions:
+Either layout is fine, do what makes sense to you, or what matches your
+`measure` function best, etc.
 
-- Lines **must not** be indented more than 6 times. If you have a need to
-  indent more than 6 levels, build a helper method or otherwise reorganize your
-  code.
-- If you write a helper method with a body longer than 2 statements, **you
-  must** add a header comment (a comment above the method) that summarizes what
-  it does in English.
+### Strategies for Measuring
 
-The remark about redundant inline commenting from PA3 is still a
-recommendation, not something we will enforce.
+You can use the `measure` and `measurementsToCSV` methods to produce data about
+how the functions behaved in terms of their runtime. You should fill in the
+`main` method with whatever you find useful for using your measuring methods to
+compare the mystery implementations. You have total choice in how you implement
+this – you can add new helpers, print the CSV format out to a file, copy/paste
+it into a spreadsheet, use a tool you like for plotting, etc. The goal is to
+use measurements to identify the different implementations. Feel free to look
+up documentation for writing Strings out to files and use it, or use
+`System.out.println` and copy/paste the output, etc. It's probably pretty
+expedient to copy the data into Excel or a Google Sheet.
 
-# Submission and Grading
-## Submission
+There are a few high-level strategies to consider:
 
-Part 1: Runtime
-- You will submit your answers to Part 1 in `pa4-written` and list anyone you collaborated with
+- If an implementation is very slow, it could take a really long time to
+  measure it for large n. If you notice something is taking a long time, stop
+  the program and try the same mystery methods on a smaller input range. Does
+  the smaller range tell you anything useful?
+- Some of the methods might have similar big-O bounds, but have different
+  constants that can be measured in terms of absolute time.
+- Some of the methods might take vastly different times to run on certain
+  inputs, so plotting them next to one another will show one with a flat line
+  at 0 and the other with some interesting curve. Make sure to check what the
+  relative numbers are when inspecting the output.
 
-Part 2: Sorting
-- You will submit the following files to `pa4-code`:
-  - `PartitionOracle.java`
-  - `CounterExample.java`
+You will use these measurements to figure out which mystery method matches the
+implementations above, and generate three graphs to justify your answers.
+ 
+### Avoiding Obscuring Optimizations
 
-Remember: More tests will be run AFTER the deadline!
+On many platforms and Java versions, simple methods like the above get
+_optimized_ to run much faster than their theoretical number of steps might
+suggest. Java is pretty smart – it can, while running, figure out how to make
+them run quickly enough that empirical measurements become hard to make. If
+you're seeing that even on values of n in the hundreds of thousands, you get
+effectively constant behavior, you should try _disabling_ these optimizations
+to get more useful measurements for distinguishing the implementations.
+
+To turn off optimiations in terminal:
+
+- Add in the flag in your javac and java commands.
+
+- Examples: java -Djava.compiler=NONE myClass
+
+Note that this will make all the mystery methods run _a lot_ slower, so you may
+want to _decrease_ the values of n you use after making this change to avoid
+waiting a long time.
 
 
+## Submission Instructions
 
-## Grade Breakdown (80 total points)
+- The `psa-03-code` assignment in Gradescope, where you will submit your
+  final code for performing measurements
+- The `psa-03-written` assignment in Gradescope, where you will submit:
+  - Your big-O justifications
+  - Your matchings for the mystery functions, along with your graphs and justifications:
+    - The Big-O bounds for each implementation f1-6.
+    - A listing that matches each of mysteryA-F to an implementation f1-6 above 
+    - Three graphs that justify a few choices above. These don't need to
+      exhaustively describe all of your matchings, but they must be generated
+      from real data that you measured using `measure`, and they must show an interesting relationship that helps justify the matching.
 
-Note that this assignment has **a lot of manually grading**, so there's less
-value in submitting after the deadline.
+## Grade Breakdown
 
-Part 1 (52 points)
-- 12 points: initial big-O justifications [manually graded]
-- 40 points: stack and queue method analysis [manually graded]
-- 0 points: Who you collaborated with for both Part 1 and Part 2. Provide this in your `pa4-written` submission
+Note that this assignment is **mostly manually graded**, so there's little value in submitting after the deadline.
 
-Part 2 (28 points)
-- 10 points: `isValidPartitionResult`, graded automatically
-- 5 points: `generateInput`, graded automatically
-- 11 points: `findCounterExample`, graded by how it performs on good and bad
-  partitions that we provide, graded automatically
-- 2 points: Test and code readability and style [manually graded]
+(54 total points)
+- 16 points `measure` and `measurementsToCSV` [autograded]
+- 12 points initial big-O justifications [manually graded]
+- 26 points matching activity [manually graded]
+  - 12 points for complexity bounds on f1-6
+  - 6 points for a correct matching
+  - 6 points for 3 relevant graphs
+  - 2 points describing how you measured
