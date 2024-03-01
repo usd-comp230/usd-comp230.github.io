@@ -261,11 +261,12 @@ To turn off optimiations in terminal:
 
 - Examples: java -Djava.compiler=NONE myClass
 
+[Click here for how to turn it off in IntelliJ](https://docs.google.com/document/d/1kBeYiFgNwPgq-l-Ou07pYe7GnL-Dkwvv-8YgiBbdhOA/edit?usp=sharing) 
+
 Note that this will make all the mystery methods run _a lot_ slower, so you may
 want to _decrease_ the values of n you use after making this change to avoid
 waiting a long time.
 
-[Link for how to turn it off in IntelliJ](https://docs.google.com/document/d/1kBeYiFgNwPgq-l-Ou07pYe7GnL-Dkwvv-8YgiBbdhOA/edit?usp=sharing) 
 
 
 ## Submission Instructions
