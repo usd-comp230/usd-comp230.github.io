@@ -16,7 +16,7 @@ _This assignment is inspired by a combination of a lab in Swarthmore College's
 CS35, and by a similar assignment by Marina Langlois and Joe Politz in CSE12 at UCSD_
 
 ## Getting the Code
-The starter code: [https://classroom.github.com/a/OJ6YJkmc](https://classroom.github.com/a/OJ6YJkmc))
+The starter code: [https://classroom.github.com/a/OJ6YJkmc](https://classroom.github.com/a/OJ6YJkmc)
 
 ## Part 1: Big-O Justification
 
@@ -264,6 +264,8 @@ To turn off optimiations in terminal:
 Note that this will make all the mystery methods run _a lot_ slower, so you may
 want to _decrease_ the values of n you use after making this change to avoid
 waiting a long time.
+
+[Link for how to turn it off in IntelliJ](https://docs.google.com/document/d/1kBeYiFgNwPgq-l-Ou07pYe7GnL-Dkwvv-8YgiBbdhOA/edit?usp=sharing) 
 
 
 ## Submission Instructions
