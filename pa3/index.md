@@ -10,10 +10,13 @@ This assignment will give you experience working with big-Ο/θ/Ω
 representations, practice matching them to implementations, and perform
 measurements of the runtime of different methods.
 
-This PA is due on ** **Tuesday, March 11th at 10:00pm** **  
+This PA is due on ** **Tuesday, March 12th at 10:00pm** **  
 
 _This assignment is inspired by a combination of a lab in Swarthmore College's
 CS35, and by a similar assignment by Marina Langlois and Joe Politz in CSE12 at UCSD_
+
+## Getting the Code
+The starter code: [https://classroom.github.com/a/OJ6YJkmc](https://classroom.github.com/a/OJ6YJkmc))
 
 ## Part 1: Big-O Justification
 
