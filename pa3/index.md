@@ -1,6 +1,6 @@
 ---
 layout: pa
-title: "PSA3: Runtime, Measured and Modeled (open)"
+title: "PSA3: Runtime, Measured and Modeled"
 #doodle: "../doodle.png"
 ---
 # PSA3: Runtime, Measured and Modeled
@@ -284,7 +284,7 @@ Note that this assignment is **mostly manually graded**, so there's little value
 - 16 points `measure` and `measurementsToCSV` [autograded]
 - 12 points initial big-O justifications [manually graded]
 - 26 points matching activity [manually graded]
-  - 12 points for complexity bounds on f1-6
+  - 10 points for complexity bounds on f1-6
   - 6 points for a correct matching
   - 6 points for 3 relevant graphs
   - 2 points describing how you measured
