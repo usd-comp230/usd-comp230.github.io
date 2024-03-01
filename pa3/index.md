@@ -280,11 +280,11 @@ waiting a long time.
 
 Note that this assignment is **mostly manually graded**, so there's little value in submitting after the deadline.
 
-(54 total points)
+(52 total points)
 - 16 points `measure` and `measurementsToCSV` [autograded]
-- 12 points initial big-O justifications [manually graded]
+- 10 points initial big-O justifications [manually graded]
 - 26 points matching activity [manually graded]
-  - 10 points for complexity bounds on f1-6
+  - 12 points for complexity bounds on f1-6
   - 6 points for a correct matching
   - 6 points for 3 relevant graphs
   - 2 points describing how you measured
