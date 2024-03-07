@@ -9,30 +9,32 @@ title: "PSA4: BST Implementation"
 
 This assignment will teach you how to implement a Binary Search Tree (BST).
 
-This PSA is due on ** **Tuesday, March 19th at 10:00pm** **  
+This PSA is due on ** **Tuesday, March 19th at 10:00pm** ** You can have an extension until Thursday, March 1st 11:59 PM automatically. 
 
-_This assignment draws from an assignment by Prof Politz's CSE 12 assignment at UCSD._
+_This assignment draws from a CSE 12 assignment at UCSD._
 
 
 ## Getting the Code
-The starter code: [todo](todo))
+You will work with the same partners at PSA3.
+
+The starter code: [https://classroom.github.com/a/Fk7oO5yc](https://classroom.github.com/a/Fk7oO5yc))
 
 # Part 1: An Implementation of `DefaultMap` as a BST (18 points)
 
 You’ll provide a fast implementation of an interface called `DefaultMap` in `BST.java`.  `BST.java` implements the `DefaultMap` interface.
 
 
-You will implement all the methods defined in the `DefaultMap` interface. You must ensure that each has the specified tight big-O bound in the **worst case**, and argue why based on the documentation of any libraries you use, or based on your implementation. Note that these are big-O bounds, so doing _better_ (like O(1) where O(log(n)) is required) is acceptable. In each, _n_ represents the number of entries in the map.
+You will implement all the methods defined in the `DefaultMap` interface. You must ensure that each has the specified tight big-O bound in the **worst case**, and argue why based on the documentation of any libraries you use, or based on your implementation. Note that these are big-O bounds, so doing _better_ (like O(1) where O(log(n)) is required) is acceptable. In each, _n_ represents the number of entries in the map. For the methods that state you must use recursion, you need to use recursion or you will not get credit.
 
-- `put`, required O(n)
-- `replace`, required _O(n)_
-- `remove`, required _O(n)_
-- `set`, required _O(n)_
-- `get`, required _O(n)_
-- `size`, required _O(1)_
+- `put`, required O(n), **MUST** use recursion
+- `replace`, required _O(n)_, **MUST** use recursion
+- `remove`, required _O(n)_, **MUST** use recursion
+- `set`, required _O(n)_, **MUST** use recursion
+- `get`, required _O(n)_, **MUST** use recursion
+- `size`, required _O(1)_, **MUST** use recursion
 - `isEmpty`, required _O(1)_
-- `containsKey`, required _O(n)_
-- `keys`, required _O(n)_
+- `containsKey`, required _O(n)_, **MUST** use recursion
+- `keys`, required _O(n)_, **MUST** use recursion
 
 In `BST`, you will need come up with the proper instance variables to achieve the above runtime requirements. Note that this includes for the `Node` class and therefore you must also create the constructor.
 
@@ -42,7 +44,9 @@ The specifications for the other methods are defined in header comments in the `
 
 ***Note:*** You are not allowed to use the java `SortedMap` interface or `Collections.sort`, or any other implementations of BSTs or sorting!!!
 
-Your implementation of `DefaultMap` will be graded automatically by tests that we provide.
+**HINT:** You can use the methods you create inside of the other methods you create!
+
+Your implementation of `DefaultMap` will be graded automatically by tests that we provide. We’ll provide a very minimal sanity check in the grader. DO NOT rely on it for testing!
 
 
 # Part 2: Gradescope Assignment (10 points)
