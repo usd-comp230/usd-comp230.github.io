@@ -31,7 +31,7 @@ You will implement all the methods defined in the `DefaultMap` interface. You mu
 - `remove`, required _O(n)_, **MUST** use recursion
 - `set`, required _O(n)_, **MUST** use recursion
 - `get`, required _O(n)_, **MUST** use recursion
-- `size`, required _O(1)_, **MUST** use recursion
+- `size`, required _O(1)_
 - `isEmpty`, required _O(1)_
 - `containsKey`, required _O(n)_, **MUST** use recursion
 - `keys`, required _O(n)_, **MUST** use recursion
