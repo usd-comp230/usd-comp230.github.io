@@ -11,8 +11,6 @@ You should finish reading the whole writeup before you start to code.
 
 This assignment will exercise your understanding of array and linked lists.
 
-This PSA is due on ** **February 29th at 10:00pm** **. This assignment is not open to collaboration.
-
 
 _This assignment is adapted from [an assignment from UCSD's
 CSE 12](https://ucsd-cse12-w19.github.io/pa2/)._

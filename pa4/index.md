@@ -9,8 +9,6 @@ title: "PSA4: BST Implementation"
 
 This assignment will teach you how to implement a Binary Search Tree (BST).
 
-This PSA is due on ** **Tuesday, March 19th at 10:00pm** ** You can have an extension until Thursday, March 1st 11:59 PM automatically. 
-
 _This assignment draws from a CSE 12 assignment at UCSD._
 
 

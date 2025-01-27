@@ -12,8 +12,6 @@ interface, and review a number of Java concepts.
 
 _This assignment draws from an assignment by Prof Politz's CSE 12 assignment at UCSD._
 
-This PSA is due on ** **Thursday, February 22nd at 10:00pm** **
-
 ## Baskets and Interns
 
 Imagine that you work for a hot new Web shopping company. You know it's
