@@ -127,21 +127,22 @@ You will write your tests as JUnit tests in the file `BasketTest.java`.
 There is some pre-existing code in this file that you shouldn't change, and
 an example that follows to get you started.
 
-The top of the file sets things up so that the tests will run once against each provided implementation of `Basket`. This is what the `@Parameterized` and related methods are doing. The main feature that is relevant to your work is that the method `makeBasket`, which can be called to create a new, empty `Basket` of the current type under test. You will use `makeBasket` to create the objects you test against.
+The top of the file sets things up so that the tests will run once against each provided implementation of `Basket`. This is what the methods at the top of the file are doing. The main feature that is relevant to your work is that the method `makeBasket`, which can be called to create a new, empty `Basket` of the current type under test. You will use `makeBasket` to create the objects you test against.
 
-Your work will happen in methods annotated with `@Test`, below the definition
+Your work will happen in methods annotated with `@ParameterizedTest(name = "Basket{index}")` and `@MethodSource("addBags")`, below the definition
 of `makeBasket`. We've gotten you started with an example. Intern 0 _really_
 didn't get much working (go look at `Basket0.java` to see just how much). The
 implementation `Basket0` is the only one that will fail this test:
 
 ```java
-@Test
-public void addedHasCount1() {
-  Basket basketToTest = makeBasket();
+@ParameterizedTest(name = "Basket{index}")
+@MethodSource("addBags")
+public void addedHasCount1(int num) {
+	Basket basketToTest = makeBasket(num);
 
-  Item i = new Item("Shampoo", 5);
-  basketToTest.add(i);
-  assertEquals(basketToTest.count(), 1);
+	Item i = new Item("Shampoo", 5);
+	basketToTest.addToBasket(i);
+	assertEquals(1, basketToTest.count());
 }
 ```
 
@@ -176,7 +177,7 @@ Hint: One `Basket` might not necessarily be that buggy. This means it will pass 
 ## Part 2: Gradescope Written Assignment (6 points)
 
 You will also answer question on Gradescope regarding the assignment.
-The following are the questions you will need to answer. **Make sure to submit directly to the Gradescope assignment: "psa-01-written"** 
+The following are the questions you will need to answer. **Make sure to submit directly to the Gradescope assignment: "PSA 1: Written Submission"** 
 
 1. Some of the `Basket` implementations are buggy – they have clear mistakes in some situations. Others simply differ in behavior. For each implementation, indicate if you think it has a clear _bug_, and describe the problem, or if it's simply an implementation _choice_. Give one sentence for each bag. Note that this requires exercising your own judgment, which we cannot do for you.
 
@@ -207,10 +208,10 @@ for problems with style.
 
 ## Submitting
 ### Part 1
-On the Gradescope assignment **psa-01-code** please submit only your `BasketTest.java` file. You may encounter errors if you submit extra files or directories. You may submit as many times as you like till the deadline. 
+On the Gradescope assignment **PSA 1: Code Submission** please submit only your `BasketTest.java` file. You may encounter errors if you submit extra files or directories. You may submit as many times as you like till the deadline. 
 
 ### Part 2
-Please submit your answers to the questions from part 2 on the Gradescope assignment **psa-01-written**. You may submit as many times as you like till the deadline.
+Please submit your answers to the questions from part 2 on the Gradescope assignment **PSA 1: Written Submission**. You may submit as many times as you like till the deadline.
 
 
 ## Scoring (19 points total)
