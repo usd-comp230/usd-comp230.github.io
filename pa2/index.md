@@ -210,7 +210,7 @@ or `==` in `Choosers.java `.  This is because if those are allowed, students can
 You will also answer question on Gradescope regarding the assignment. Answer 
 the two questions written below. 
 **Make sure to submit
-directly to the Gradescope assignment: "psa-02-written"** 
+directly to the Gradescope assignment: "PSA2 Written Submission"** 
 
 1. Describe a mistake you made in your implementation, and how you fixed it.
 (Don't worry even if you think you implementation is incomplete when answering 
@@ -389,7 +389,7 @@ Checklist:
 ## Submitting
 
 ### Part 1 & 2
-On the Gradescope assignment **psa-02-code** please submit 
+On the Gradescope assignment **PSA 2: Code Submission** please submit 
 the following files:
 
     * ArrayGL.java
@@ -405,7 +405,7 @@ the following files:
 
 ### Part 3
 Please submit your answers to the questions from part 3 on the Gradescope 
-assignment **psa-02-written**. You may submit as many 
+assignment **PSA 2 Written Submission**. You may submit as many 
 times as you like till the deadline.
 
 ## Scoring (50 points total)
