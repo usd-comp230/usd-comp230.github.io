@@ -21,11 +21,13 @@ The starter code: [https://classroom.github.com/a/OJ6YJkmc](https://classroom.gi
 Indicate whether the following assertions are true or false, and give a
 justification (provide this in `psa-03-written`):
 
-- _n + 5n<sup>2</sup> + 8n<sup>4</sup>_ is _O(n)_
-- _n! + n<sup>2</sup>_ is _O(n * log n)_
+- _n + 2n<sup>3</sup> + 8n<sup>4</sup>_ is _O(n<sup>3</sup>)_
+- _n * log n<sup>2</sup>_ is _O(n! + n)_
 - _log n + n * log n + log(log n)_ is _Ω(n)_
-- _n<sup>2</sup> + n/4 + 6_ is _Θ(n<sup>3</sup>)_
-- _1/(n<sup>50</sup>) + log32_ is _Θ(1)_
+- _n<sup>2</sup> + n/3 + 2_ is _Θ(n<sup>8</sup>)_
+- _1/(n<sup>24</sup>) + log32_ is _Θ(8)_
+- _1 + log32_ is _Ω(25)_
+- _n! + n<sup>2</sup>_ is _O(10n * log n)_
 
 If you are justifying the positive direction, give choices of `n0` and `C`. For
 big-Θ, make sure to justify both big-O and big-Ω, or big-O in both directions.
@@ -241,7 +243,7 @@ There are a few high-level strategies to consider:
   relative numbers are when inspecting the output.
 
 You will use these measurements to figure out which mystery method matches the
-implementations above, and generate three graphs to justify your answers.
+implementations above, and generate three graphs to justify your answers. Your graphs should be submitted as a single pdf.
  
 ### Avoiding Obscuring Optimizations
 
@@ -265,6 +267,8 @@ Note that this will make all the mystery methods run _a lot_ slower, so you may
 want to _decrease_ the values of n you use after making this change to avoid
 waiting a long time.
 
+Also note that you will likely want to discard the first (or first few) measurements as they may not be accurate. REMEMBER: this will not look perfect. Turning off the optimizations does not work perfectly so try to make your best educated guess.
+
 
 
 ## Submission Instructions
@@ -278,15 +282,15 @@ waiting a long time.
     - A listing that matches each of mysteryA-F to an implementation f1-6 above 
     - Three graphs that justify a few choices above. These don't need to
       exhaustively describe all of your matchings, but they must be generated
-      from real data that you measured using `measure`, and they must show an interesting relationship that helps justify the matching.
+      from real data that you measured using `measure`, and they must show an interesting relationship that helps justify the matching. Your graphs should be submitted as a single pdf. Please note that your graphs do not need to look perfect!
 
 ## Grade Breakdown
 
 Note that this assignment is **mostly manually graded**, so there's little value in submitting after the deadline.
 
-(52 total points)
+(56 total points)
 - 16 points `measure` and `measurementsToCSV` [autograded]
-- 10 points initial big-O justifications [manually graded]
+- 14 points initial big-O justifications [manually graded]
 - 26 points matching activity [manually graded]
   - 12 points for complexity bounds on f1-6
   - 6 points for a correct matching
