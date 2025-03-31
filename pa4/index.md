@@ -52,7 +52,7 @@ In the second part of this assignment you will use your BST to solve a problem a
 <br>
 <br>
 1. Ask the user to give you the path to a file they want you to load in (there are examples under: `"src/main/resources/"` such as `"src/main/resources/file_small.txt"`). If the user gives an incorrect/invalid path for the file you should prompt them to try again until they give you a valid path.<br><br>
-`Please enter the file name:`<br><br>
+`Please enter the path to your file:`<br><br>
 
 2. Read each line of the file and split the lines by spaces in order to get words (it is expected that some words will have periods, etc on the end such as: `"end."`)<br><br>
 Let the user know you are loading the file: <br>`Loading the file...`<br><br>
@@ -67,7 +67,7 @@ Let the user know you are loading the file: <br>`Loading the file...`<br><br>
 __Below are two sample runs of the program:__
 
 ```
-Please enter the file name: src/main/resources/file_small.txt
+Please enter the path to your file: src/main/resources/file_small.txt
 Loading the file...
 
 Please enter the word you are looking for: cs
@@ -84,7 +84,7 @@ You have chosen to quit the program. Goodbye!
 
 
 ```
-Please enter the file name: xxx.txt
+Please enter the path to your file: xxx.txt
 Loading the file...
 
 File not found: xxx.txt (The system cannot find the file specified)
